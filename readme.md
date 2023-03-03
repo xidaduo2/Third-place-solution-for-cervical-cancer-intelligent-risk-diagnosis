@@ -31,3 +31,14 @@ bash test.sh
 ### 4.  其他注意事项。
 
 在数据处理阶段，我们是首先训练了一个六类的模型，然后用它在数据上的误检框，重新定义为一类，以此来利用阴性图片和ROI中的空图片，所以最后我们训练的是7类（不包括背景）的模型。此数据生成过程比较繁琐，具体步骤在train.sh被注释部分。
+
+
+-----
+
+##### 图像预处理步骤
+1. 
+'''
+labelme . --labels labels.txt --nodata --validatelabel exact --config "{shift_auto_shape_color: -2}"
+
+'''
+
